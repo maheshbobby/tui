@@ -1,0 +1,7 @@
+application:
+  level.org.springframework: debug
+repository:
+   name:
+     url: https://api.github.com/users/{user}/repos
+   user:
+     isExist: https://api.github.com/users/{user}

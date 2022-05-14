@@ -1,0 +1,10 @@
+NEM1000	Network issue/timeout to connect endpoints	500
+NEM1001	NEM response is null	500
+NEM1002	Client exception during NEM call	500
+NEM1003	Server exception during NEM call	500
+NEM1004	NEM call returns Not found	400
+NEM1005	NEM exception too many requests	429
+NEM1006	NEM Accounts locks response is null	400
+NEM1007	Client exception during NEM locks call	500
+NEM1008	Transactions Statements request prior to 15 months are not available	400
+NEM1009	NEM Exception from CircuitBreaker	500

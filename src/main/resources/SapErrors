@@ -1,0 +1,8 @@
+SAP.UMS.CATR.400.001	The Account is Closed	400
+SAP.UMS.CATR.400.002	The Account is in Locked Status	400
+SAP.UMS.CATR.400.003	Statement requests prior to 15 months are not available	400
+SAP.UMS.CATR.404.001	The Requested Data Not Found	404
+SAP.UMS.CATR.500.000	Internal Server Error	500
+SAP.UMS.CATR.500.001	General Business Error	500
+SAP.UMS.CATR.500.002	OBIE response constructed from SAP response is not less than 10 MB	500
+SAP.UMS.CATR.500.003	Network issue/timeout to connect endpoints	500

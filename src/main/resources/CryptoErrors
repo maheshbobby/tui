@@ -1,0 +1,12 @@
+CRP1000	Failed to sign JWT4	500
+CRP1001	Failed to sign database record signature	500
+CRP1002	Network issue/timeout to connect to crypto service endpoints	500
+CRP1003	Crypto service response is null	500
+CRP1004	Client exception during Crypto service call	500
+CRP1005	Server exception during Crypto service call	500
+CRP1006	Mandatory JWT field missing	500
+CRP1007	Certificate’s CN is not in the allowed CN list for this endpoint	403
+CRP1008	JWT field validation failure	500
+CRP1009	Internal Server Error	500
+CRP1010	Unauthorised	401
+CRP1011	Failed to populate private key identifiers - SworldIdent and Kid	500

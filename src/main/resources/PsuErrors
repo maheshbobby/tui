@@ -1,0 +1,12 @@
+TPPCOMMBATCH.FILE.NOTPRESENT	TPP Common batch file is not present	500
+TPPCOMMBATCH.FILEREAD.CORRUPTED	TPP Common batch file is corrupted	500
+TPPCOMMBATCH.FILEREAD.EMPTY	TPP Common batch file is empty	500
+TPPCOMMBATCH.FILEREAD.COLUMNMISSING	A coloumn is missing from the batch file	400
+TPPCOMMBATCH.FILEREAD.ERROR	Not able to read the file	400
+TPPCOMMBATCH.CRYPTO.SIGNJWT4.ERROR	Error occur while calling the Crypto service	500
+TPPCOMMBATCH.NEM.INVPARTYMGMT.CUSTOMERNOTFOUND	NEM call for involved party returns Not Found	400
+TPPCOMMBATCH.NEM.INVPARTYMGMT.ERROR	Exception during NEM involved party call	500
+TPPCOMMBATCH.NEM.COMMMGMTEMAIL.ERROR	Error occurs while calling the NEM service for EMAIL	500
+TPPCOMMBATCH.NEM.COMMMGMTSMS.ERROR	Error occurs while calling the NEM service for SMS	500
+TPPCOMMBATCH.COMMMGMT.ERROR	Error while processing the response	500
+TPPCOMMBATCH.FILERENAME.ERROR	Error while renaming the file	500

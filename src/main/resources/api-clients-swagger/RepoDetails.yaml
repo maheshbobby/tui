@@ -1,0 +1,479 @@
+###################################################################################################################
+#Change History
+#Date             Version     Contact Name        Changes
+###################################################################################################################
+#13/05/2022       1.0.0        Mahesh Joshi       Initial Draft
+###################################################################################################################
+openapi: 3.0.0
+servers:
+  - url: /tui/v1.0/repository
+info:
+  title: Repositories APIs
+  description: Repositories Swagger Specification
+  version: 1.0.0
+tags:
+  - name: Repositories
+paths:
+  '/repository/owner/{ownerName}':
+    get:
+      operationId: tuiRepositories
+      tags:
+        - Repositories
+      summary: Retrieve a TUI Repo Details
+      description: Retrieve a TUI Repo Details
+      parameters:
+        - $ref: '#/components/parameters/x-JourneyID'
+        - $ref: '#/components/parameters/x-SourceSystemID'
+        - $ref: '#/components/parameters/x-CreateDateTime'
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/ownerName'
+
+      responses:
+        '200':
+          $ref: "#/components/responses/RepositoryDetailsResponse"
+        '400':
+          $ref: '#/components/responses/400Error'
+        '401':
+          $ref: '#/components/responses/401Error'
+        '403':
+          $ref: '#/components/responses/403Error'
+        '404':
+          $ref: '#/components/responses/404Error'
+        '405':
+          $ref: '#/components/responses/405Error'
+        '406':
+          $ref: '#/components/responses/406Error'
+        '415':
+          $ref: '#/components/responses/415Error'
+        '429':
+          $ref: '#/components/responses/429Error'
+        '500':
+          $ref: '#/components/responses/InternalError'
+components:
+  responses:
+    400Error:
+      description: Bad request
+      headers:
+        x-JourneyID:
+          required: true
+          description: A unique identifier populated by the source system
+          schema:
+            type: string
+            format: uuid
+        x-SourceSystemID:
+          required: true
+          description: Service consumer name.
+          schema:
+            type: string
+        x-CreateDateTime:
+          required: true
+          description: Time stamp associated with creation of the message. The
+            UTC ISO 8601 Date Time format. For example 2017-01-01T00:00:00Z
+          schema:
+            type: string
+            format: date-time
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+        application/jose+jwe:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+    401Error:
+      description: Unauthorized
+      headers:
+        x-JourneyID:
+          required: true
+          description: A unique identifier populated by the source system
+          schema:
+            type: string
+            format: uuid
+        x-SourceSystemID:
+          required: true
+          description: Service consumer name.
+          schema:
+            type: string
+        x-CreateDateTime:
+          required: true
+          description: Time stamp associated with creation of the message. The
+            UTC ISO 8601 Date Time format. For example 2017-01-01T00:00:00Z
+          schema:
+            type: string
+            format: date-time
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+        application/jose+jwe:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+    403Error:
+      description: Forbidden
+      headers:
+        x-JourneyID:
+          required: true
+          description: A unique identifier populated by the source system
+          schema:
+            type: string
+            format: uuid
+        x-SourceSystemID:
+          required: true
+          description: Service consumer name.
+          schema:
+            type: string
+        x-CreateDateTime:
+          required: true
+          description: Time stamp associated with creation of the message. The
+            UTC ISO 8601 Date Time format. For example 2017-01-01T00:00:00Z
+          schema:
+            type: string
+            format: date-time
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+        application/jose+jwe:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+    404Error:
+      description: Not found
+      headers:
+        x-JourneyID:
+          required: true
+          description: A unique identifier populated by the source system
+          schema:
+            type: string
+            format: uuid
+        x-SourceSystemID:
+          required: true
+          description: Service consumer name.
+          schema:
+            type: string
+        x-CreateDateTime:
+          required: true
+          description: Time stamp associated with creation of the message. The
+            UTC ISO 8601 Date Time format. For example 2017-01-01T00:00:00Z
+          schema:
+            type: string
+            format: date-time
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+        application/jose+jwe:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+    405Error:
+      description: Method Not Allowed
+      headers:
+        x-JourneyID:
+          required: true
+          description: A unique identifier populated by the source system
+          schema:
+            type: string
+            format: uuid
+        x-SourceSystemID:
+          required: true
+          description: Service consumer name.
+          schema:
+            type: string
+        x-CreateDateTime:
+          required: true
+          description: Time stamp associated with creation of the message. The
+            UTC ISO 8601 Date Time format. For example 2017-01-01T00:00:00Z
+          schema:
+            type: string
+            format: date-time
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+        application/jose+jwe:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+    406Error:
+      description: Not Acceptable
+      headers:
+        x-JourneyID:
+          required: true
+          description: A unique identifier populated by the source system
+          schema:
+            type: string
+            format: uuid
+        x-SourceSystemID:
+          required: true
+          description: Service consumer name.
+          schema:
+            type: string
+        x-CreateDateTime:
+          required: true
+          description: Time stamp associated with creation of the message. The
+            UTC ISO 8601 Date Time format. For example 2017-01-01T00:00:00Z
+          schema:
+            type: string
+            format: date-time
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+        application/jose+jwe:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+    415Error:
+      description: Unsupported Media Type
+      headers:
+        x-JourneyID:
+          required: true
+          description: A unique identifier populated by the source system
+          schema:
+            type: string
+            format: uuid
+        x-SourceSystemID:
+          required: true
+          description: Service consumer name.
+          schema:
+            type: string
+        x-CreateDateTime:
+          required: true
+          description: Time stamp associated with creation of the message. The
+            UTC ISO 8601 Date Time format. For example 2017-01-01T00:00:00Z
+          schema:
+            type: string
+            format: date-time
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+        application/jose+jwe:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+    429Error:
+      description: Too Many Requests
+      headers:
+        x-JourneyID:
+          required: true
+          description: A unique identifier populated by the source system
+          schema:
+            type: string
+            format: uuid
+        Retry-After:
+          description: "Number in seconds to wait"
+          schema:
+            type: integer
+        x-SourceSystemID:
+          required: true
+          description: Service consumer name.
+          schema:
+            type: string
+        x-CreateDateTime:
+          required: true
+          description: Time stamp associated with creation of the message. The
+            UTC ISO 8601 Date Time format. For example 2017-01-01T00:00:00Z
+          schema:
+            type: string
+            format: date-time
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+        application/jose+jwe:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+    InternalError:
+      description: Internal Server Error
+      headers:
+        x-JourneyID:
+          required: true
+          description: A unique identifier populated by the source system
+          schema:
+            type: string
+            format: uuid
+        x-SourceSystemID:
+          required: true
+          description: Service consumer name.
+          schema:
+            type: string
+        x-CreateDateTime:
+          required: true
+          description: Time stamp associated with creation of the message. The
+            UTC ISO 8601 Date Time format. For example 2017-01-01T00:00:00Z
+          schema:
+            type: string
+            format: date-time
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+        application/jose+jwe:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+    RepositoryDetailsResponse:
+      description: Default response
+      headers:
+        x-JourneyID:
+          required: true
+          description: A unique identifier populated by the source system
+          schema:
+            type: string
+            format: uuid
+        x-SourceSystemID:
+          required: true
+          description: Service consumer name.
+          schema:
+            type: string
+        x-CreateDateTime:
+          required: true
+          description: Time stamp associated with creation of the message. The
+            UTC ISO 8601 Date Time format. For example 2017-01-01T00:00:00Z
+          schema:
+            type: string
+            format: date-time
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/RepoDetailsResponse'
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RepoDetailsResponse'
+  parameters:
+    Authorization:
+      in: header
+      name: Authorization
+      required: true
+      description: 'An Authorisation Token as per https://tools.ietf.org/html/rfc6750'
+      schema:
+        type: string
+    x-JourneyID:
+      in: header
+      name: x-JourneyID
+      required: true
+      description: A unique identifier populated by the source system
+      style: simple
+      explode: false
+      schema:
+        type: string
+        format: uuid
+    x-SourceSystemID:
+      in: header
+      name: x-SourceSystemID
+      required: true
+      description: Service consumer name.
+      style: simple
+      explode: false
+      schema:
+        type: string
+    x-CreateDateTime:
+      in: header
+      name: x-CreateDateTime
+      required: true
+      description: Time stamp associated with creation of the message. The
+        UTC ISO 8601 Date Time format. For example 2017-01-01T00:00:00Z
+      style: simple
+      explode: false
+      schema:
+        type: string
+        format: date-time
+    requestAPIVersion:
+      in: "header"
+      name: "x-APIVersion"
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: "string"
+      description: " Endpoint version"
+    ownerName:
+      in: "path"
+      name: "ownerName"
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: "string"
+      description: "Owner of the Repositor."
+
+  schemas:
+    ErrorBody:
+      properties:
+        code:
+          description: Error Code.
+          type: string
+        details:
+          description: Error Details.
+          type: string
+        message:
+          description: Error Message.
+          type: string
+      additionalProperties: false
+    RepoDetailsResponse:
+      type: object
+      required:
+        - Data
+        - Risk
+        - Links
+        - Meta
+      properties:
+        Data:
+          type: object
+          properties:
+            repositories:
+              type: array
+              items:
+                properties:
+                  repositoryName:
+                    type: string
+                    minLength: 1
+                    maxLength: 140
+                    description: |
+                      The name of the repository.
+                  repositoryOwner:
+                    type: string
+                    minLength: 1
+                    maxLength: 128
+                    description: |
+                      owner of the repository
+                  branches:
+                    type: array
+                    items:
+                      required:
+                        - name
+                        - sha
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          minLength: 1
+                          maxLength: 128
+                          description:  "Name of the branch"
+                        sha:
+                          type: string
+                          minLength: 1
+                          maxLength: 128
+                          description: "sha details"

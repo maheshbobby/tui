@@ -1,0 +1,19 @@
+{
+  "repositories": [
+
+    {
+      "repositoryName": "maheshbobby/tui",
+      "repositoryOwner": "maheshbobby",
+      "branches": [
+        {
+          "name": "fetch-branches-from-github",
+          "sha": "2213bf0e4d0978dcd0e58713c5a3685f1c8cd269"
+        },
+        {
+          "name": "master",
+          "sha": "3acfb3373e1c409b77dbc8a9bd20533325d7e6b4"
+        }
+      ]
+    }
+  ]
+}
