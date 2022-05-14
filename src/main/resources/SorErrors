@@ -1,7 +1,0 @@
-SOR1000	Network issue/timeout to connect endpoints	500
-SOR1001	SOR Exception from CircuitBreaker	500
-SOR1002	Client exception during SOR call	500
-SOR1003	Server exception during SOR call	500
-SOR1004	SOR call returns Not found	400
-SOR1005	SOR exception too many requests	429
-SOR1006	Transactions Statements request prior to 15 months are not available	400
